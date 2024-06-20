@@ -1,0 +1,27 @@
+name: nonlinear_fusion
+channels:
+  - pytorch
+  # - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3
+  - pytorch
+  # - torchvision
+  # - torchaudio
+  # - pytorch-cuda=11.6
+  - numpy
+  - scipy
+  - matplotlib
+  - ipykernel
+  # - ipywidgets
+  - scikit-learn
+  # - ipympl
+  - numba
+  - seaborn
+  - pandas 
+  - pip
+  - pip:
+    - lea
+    - tqdm
+    - contourpy
