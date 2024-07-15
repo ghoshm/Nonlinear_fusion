@@ -1,7 +1,7 @@
 # Nonlinear fusion
 
 Code for the paper Ghosh et al., 2024 *Nonlinear fusion is optimal for a wide class of multisensory tasks*: 
-* [Paper]()
+* [Paper](https://doi.org/10.1371/journal.pcbi.1012246)
 * [Preprint](https://doi.org/10.1101/2023.07.24.550311)
 
 If you have any questions regarding the code please contact either [Marcus Ghosh](https://profiles.imperial.ac.uk/m.ghosh) or [Dan Goodman](https://neural-reckoning.org). 
