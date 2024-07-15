@@ -5,7 +5,12 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-from m2snn.multisensory import DetectionTask, ClassicalTask
+from m2snn.multisensory import (
+    DetectionTask,
+    ClassicalTask,
+    ComodulationTask,
+    BalancedComodulationTask,
+)
 from m2snn.spikes import SpikingMultimodal
 from m2snn.snn import build_network
 from m2snn.training import train
@@ -13,8 +18,10 @@ from m2snn.training import train
 if __name__ == "__main__":
 
     # Set task parameters - note that these differ per task.
-    task = DetectionTask(pm=2 / 3, pe=0.057, pc=0.95, pn=1 / 3, pi=0.01)
+
+    # task = DetectionTask(pm=2 / 3, pe=0.057, pc=0.95, pn=1 / 3, pi=0.01)
     # task = ClassicalTask(s=0.1)
+    task = BalancedComodulationTask(s=0.5)
 
     # Generate spikes from the trials.
     bs = 128
@@ -53,8 +60,8 @@ if __name__ == "__main__":
 
     networks = {
         "multi": build_network(**{"arch_type": "multi", **model_config}),
-        # "uni": build_network(**{"arch_type": "uni", **model_config}),
-        # "double_uni": build_network(**{"arch_type": "double_uni", **model_config}),
+        "uni": build_network(**{"arch_type": "uni", **model_config}),
+        "double_uni": build_network(**{"arch_type": "double_uni", **model_config}),
     }
 
     # Train the models.
